@@ -1,9 +1,14 @@
-IronCache Rails Support Client
--------------
+# IronCache Rails Support Client
 
+## Getting Started
 
-Using As Rails Store
-====================
+You'll need an account at [Iron.io](http://www.iron.io) first.
+
+Then add this gem to your Gemfile:
+
+    gem 'iron_cache_rails'
+
+## Using As Rails Store
 
 You can use IronCache as any other rails store. Put iron.json into your project's config dir, add iron_cache to Gemfile and you are ready to go.
 
@@ -13,9 +18,7 @@ Alternatively, you can supply project_id and token in code.
 
     config.cache_store = :iron_cache_store, :project_id => 'XXX', :token => 'YYY'
 
-
-Using As Rails Session Store
-====================
+## Using As Rails Session Store
 
 You can use IronCache as any other rails session store. Put iron.json into your project's config dir, add iron_cache to Gemfile and you are ready to go.
 
