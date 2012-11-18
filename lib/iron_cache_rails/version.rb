@@ -1,3 +1,3 @@
-module IronCache
+module IronCacheRails
   VERSION = "0.1.0"
 end
