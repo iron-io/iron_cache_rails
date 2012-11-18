@@ -3,12 +3,12 @@ require 'base64'
 
 module ActiveSupport
   module Cache
-    class IronCacheStore < ActiveSupport::Cache::Store
+    class IronCache < ActiveSupport::Cache::Store
 
       def initialize(options = nil)
         super(options)
 
-        @client = IronCache::Client.new(@options)
+        @client = ::IronCache::Client.new(@options)
 
         extend ActiveSupport::Cache::Strategy::LocalCache
       end
