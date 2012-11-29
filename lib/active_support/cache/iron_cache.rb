@@ -65,7 +65,7 @@ module ActiveSupport
       end
 
       def escape_key(key)
-        ekey = ::Base64.encode64(key)
+        ekey = ::Base64.encode64(key).gsub("\n",'').gsub("/",'')
 
         if ekey.size > 250
           ekey = "#{key[0, 213]}:md5:#{Digest::MD5.hexdigest(key)}"
