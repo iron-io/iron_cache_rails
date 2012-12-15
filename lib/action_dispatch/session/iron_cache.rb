@@ -41,7 +41,7 @@ module ActionDispatch
 
       def destroy_session(env, session_id, options)
         with_namespace(session_id, options) do |cache, k|
-          cache.delete(k)
+          cache.delete(k) rescue nil
         end
 
         generate_sid
