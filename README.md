@@ -10,7 +10,7 @@ Then add this gem to your Gemfile:
 gem 'iron_cache_rails'
 ```
 
-## Using As Rails Store
+## Using As Rails Cache Store
 
 You can use IronCache as any other rails store. Put iron.json into your project's config dir, add iron_cache_rails to Gemfile and you are ready to go.
 
