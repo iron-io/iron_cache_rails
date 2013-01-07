@@ -31,7 +31,7 @@ module ActionDispatch
         [session_id, session_data]
       end
 
-      def set_session(env, session_id, session, options)
+      def set_session(env, session_id, session, options={})
         with_namespace(session_id, options) do |cache, k|
           cache.put(k, serialize_entry(session, options), options)
         end
@@ -39,7 +39,7 @@ module ActionDispatch
         session_id
       end
 
-      def destroy_session(env, session_id, options)
+      def destroy_session(env, session_id, options={})
         with_namespace(session_id, options) do |cache, k|
           cache.delete(k) rescue nil
         end
