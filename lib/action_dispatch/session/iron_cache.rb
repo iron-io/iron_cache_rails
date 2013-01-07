@@ -72,7 +72,7 @@ module ActionDispatch
           raw_value = ::Base64.decode64(raw_value) rescue raw_value
           Marshal.load(raw_value) rescue raw_value
         else
-          nil
+          {}
         end
       end
 
