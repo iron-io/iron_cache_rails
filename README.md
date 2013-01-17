@@ -21,7 +21,7 @@ config.cache_store = :iron_cache
 Alternatively, you can supply project_id and token in code.
 
 ```ruby
-config.cache_store = :iron_cache, project_id: 'XXX', token: 'YYY'
+config.cache_store = :iron_cache, {project_id: 'XXX', token: 'YYY'}
 ```
 
 ## Using As Rails Session Store
