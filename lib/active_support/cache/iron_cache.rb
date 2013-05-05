@@ -57,9 +57,9 @@ module ActiveSupport
       private
 
       def with_namespace(key, options)
-        options[:namespace] ||= 'rails_cache'
+        opts = {:namespace => 'rails_cache'}.merge(options || {})
 
-        cache_name, key_name = namespaced_key(key, options).split(':', 2)
+        cache_name, key_name = namespaced_key(key, opts).split(':', 2)
 
         yield(@client.cache(cache_name), escape_key(key_name))
       end
