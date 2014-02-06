@@ -33,7 +33,7 @@ module ActionDispatch
 
       def set_session(env, session_id, session, options={})
         with_namespace(session_id, options) do |cache, k|
-          cache.put(k, serialize_entry(session, options), options)
+          cache.put(k, serialize_entry(session, options), options.to_hash) # need to_hash because options is: http://rubydoc.info/docs/rails/ActionDispatch/Request/Session/Options
         end
 
         session_id
