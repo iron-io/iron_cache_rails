@@ -68,7 +68,7 @@ module ActiveSupport
         ekey = ::Base64.encode64(key).gsub("\n",'').gsub("/",'')
 
         if ekey.size > 250
-          ekey = "#{key[0, 213]}:md5:#{Digest::MD5.hexdigest(key)}"
+          ekey = "#{ekey[0, 213]}:md5:#{Digest::MD5.hexdigest(ekey)}"
         end
 
         ekey
