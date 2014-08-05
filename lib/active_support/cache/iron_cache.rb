@@ -25,8 +25,9 @@ module ActiveSupport
         end
       end
 
-      def clear(options = nil)
-        @client.post( "projects/#{@client.project_id}/caches/rails_cache/clear" )
+      def clear(options = {})
+        opts = {:namespace => 'rails_cache'}.merge(options || {})
+        @client.post( "projects/#{ @client.project_id }/caches/#{ opts[:namespace] }/clear" )
       end
 
       protected
