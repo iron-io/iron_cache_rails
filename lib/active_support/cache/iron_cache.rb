@@ -25,6 +25,10 @@ module ActiveSupport
         end
       end
 
+      def clear(options = nil)
+        @client.post( "projects/#{@client.project_id}/caches/rails_cache/clear" )
+      end
+
       protected
 
       def read_entry(key, options)
